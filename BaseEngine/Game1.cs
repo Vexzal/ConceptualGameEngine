@@ -2,7 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
-namespace ConceptualGame
+namespace BaseEngine
 {
     /// <summary>
     /// This is the main type for your game.
@@ -12,22 +12,6 @@ namespace ConceptualGame
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         
-        //rendering
-        /** so the idea is you add every model 
-         *  and it's effect and relevant effect properties
-         *  to a list that the renderer steps through and renders.
-         *  
-         **/
-        //physics
-        /**
-         *  like rendering but not like rendering.
-         *  uhhhh
-         *  yeah?
-         *  alright so we have a collection of physics items that are added to the world
-         *  that at least is straight forward enough
-         **/
-        //
-
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
