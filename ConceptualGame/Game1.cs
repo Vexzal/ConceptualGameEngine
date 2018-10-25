@@ -69,12 +69,7 @@ namespace ConceptualGame
             renderer.Initialize();
             _assets = new Assets();
             base.Initialize();
-        }
-
-        Model Cube;
-        Matrix World;
-        Matrix View;
-        Matrix Projection;
+        }        
 
         /// <summary>
         /// LoadContent will be called once per game and is the place to load
@@ -95,20 +90,7 @@ namespace ConceptualGame
                 {
                     renderer.AddMesh(mesh);
                 }
-            }
-
-            Cube = Content.Load<Model>("Cube");
-            World = Matrix.CreateTranslation(Vector3.UnitZ * 2);
-
-            float fov = MathHelper.ToRadians(30);
-            float aspect = (float)graphics.PreferredBackBufferWidth / graphics.PreferredBackBufferHeight;
-            Vector3 CameraPosition = Vector3.Transform(
-                new Vector3(0, -10, 0),
-                Matrix.CreateRotationX(MathHelper.ToRadians(35)));
-            View = Matrix.CreateLookAt(CameraPosition, Vector3.Zero, Vector3.UnitZ);
-            Projection = Matrix.CreatePerspectiveFieldOfView(fov, aspect, 1, 100);
-
-
+            }           
 
             // TODO: use this.Content to load your game content here
 
@@ -151,17 +133,7 @@ namespace ConceptualGame
             GraphicsDevice.Clear(Color.CadetBlue);
             renderer.Draw();
             // TODO: Add your drawing code here
-            //foreach(ModelMesh mesh in Cube.Meshes)
-            //{
-            //    foreach(BasicEffect beffect in mesh.Effects)
-            //    {
-            //        //beffect.DiffuseColor = Color.White.ToVector3();
-            //        beffect.World = World;
-            //        beffect.View = View;
-            //        beffect.Projection = Projection;
-            //    }
-            //    mesh.Draw();
-            //}
+            
             //do all drawing
 
             base.Draw(gameTime);
